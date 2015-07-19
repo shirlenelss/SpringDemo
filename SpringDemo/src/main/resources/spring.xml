@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- using class setter 
+	<bean id="triangle" class="org.shirlene.java.Triangle">
+		<property name="type" value="Equaliteral" />
+	</bean> --> 
+	<bean id="triangle" class="org.shirlene.java.Triangle">
+		<constructor-arg index="0" value="Equaliteral" />
+		<constructor-arg index="1" value="20" />
+		<constructor-arg index="2">
+			<list>
+				<ref bean= "pointA" />
+				<ref bean= "pointB" />
+				<ref bean= "pointC" />
+			</list>
+		</constructor-arg> 
+	</bean>
+	
+	
+	<bean id="pointA" class="org.shirlene.java.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+		<bean id="pointB" class="org.shirlene.java.Point">
+		<property name="x" value="10" />
+		<property name="y" value="10" />
+	</bean>
+		<bean id="pointC" class="org.shirlene.java.Point">
+		<property name="x" value="0" />
+		<property name="y" value="20" />
+	</bean>
+	<alias name="triangle" alias="threePointShape"/>
+</beans>
