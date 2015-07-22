@@ -95,5 +95,11 @@ InitializingBean, DisposableBean{
 		
 	}
 	
-
+	public void myInit(){
+		System.out.println("My init called for Triangle");
+	}
+	
+	public void myDestroy(){
+		System.out.println("My destroy called for Triangle");
+	}
 }

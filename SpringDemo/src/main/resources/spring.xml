@@ -6,7 +6,7 @@
 	<bean id="triangle" class="org.shirlene.java.Triangle">
 		<property name="type" value="Equaliteral" />
 	</bean> --> 
-	<bean id="triangle" class="org.shirlene.java.Triangle" scope="prototype">
+	<bean id="triangle" class="org.shirlene.java.Triangle" scope="singleton" init-method="myInit" destroy-method="myDestroy">
 		<constructor-arg index="0" value="Equaliteral" />
 		<constructor-arg index="1" value="20" />
 		<constructor-arg index="2">
@@ -34,5 +34,5 @@
 	<alias name="triangle" alias="threePointShape"/>
 	
 	<bean id ="childPoints" class="org.shirlene.java.Point" parent="pointA" />
-	
+	<bean class="org.shirlene.java.DisplayNameBeanPostProcessor" />
 </beans>
